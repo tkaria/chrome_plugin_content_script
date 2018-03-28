@@ -1,0 +1,38 @@
+{
+    "name": "TEST PLUGIN ",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "MSG TEST",
+   
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "background": {
+        "page": "background.html"
+    },
+    "permissions": [
+        "storage",
+        "notifications",
+        "activeTab",
+        "tabs",
+        "<all_urls>",
+        "contextMenus"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content_script.js"
+            ],
+            "css": [
+                "content_script.css"
+            ],
+            "all_frames": false
+        }
+    ],
+    "web_accessible_resources": [
+        "chrome-extension://kfpainkapdpnibpgdkacklmofembhmlm/dist/index.html#/EntityView"
+    ]
+}
